@@ -1,147 +1,397 @@
 <!doctype html>
 <html lang="th"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;800&family=Sarabun:wght@400;500;700&display=swap" rel="stylesheet">
+<title>โรครากปม</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Sarabun:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
 <style>
 @page{size:297mm 420mm;margin:0}
+:root{--cream:#fff5da;--ink:#1f4a2a;--gold:#c9973f;--orange:#dc8a32;--wood:#d48b3d;--text:#f2eedd;--hl:#ffd76a}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:297mm;height:420mm}
-body{font-family:'Sarabun',sans-serif;color:#f4f1e6;position:relative;overflow:hidden;
- background:linear-gradient(180deg,#1f4d2b 0%,#244f2c 48%,#3b2c1d 78%,#2b1f14 100%);}
-.grain{position:absolute;inset:0;opacity:.18;background-image:radial-gradient(#000 1px,transparent 1.2px);background-size:7px 7px}
-.wrap{position:absolute;inset:0;padding:16mm 18mm}
-h1{font-family:'Kanit';font-weight:800;font-size:46mm;line-height:1;text-align:center;color:#fff8dc;
- text-shadow:0 2mm 0 #14321c,0 0 8mm rgba(0,0,0,.4);margin-top:4mm}
-.sub{display:block;width:max-content;margin:4mm auto 0;font-family:'Kanit';font-weight:600;font-size:10mm;
- background:#fff8dc;color:#1f4d2b;padding:2mm 10mm;border-radius:20mm;box-shadow:0 1.5mm 0 #b88a44}
-.tag{display:inline-block;font-family:'Kanit';font-weight:600;font-size:9mm;background:#fff8dc;color:#2d4a22;
- padding:1.2mm 8mm;border-radius:10mm;box-shadow:0 1.2mm 0 #c9973f;margin-bottom:4mm}
-p,li{font-size:5.3mm;line-height:1.6}
-ul,ol{padding-left:7mm}
-li{margin-bottom:1mm}
-.sec{position:absolute}
-.frame{border:4mm solid #c9822f;border-radius:4mm;background:#f6efd9;box-shadow:0 2mm 0 #7a4a17;overflow:hidden}
-.bubble{position:absolute;background:#fff;color:#2d4a22;font-family:'Kanit';font-weight:500;font-size:5.6mm;
- text-align:center;border-radius:50%;padding:6mm 6mm;line-height:1.25;box-shadow:0 1mm 2mm rgba(0,0,0,.3)}
-.bubble:after{content:"";position:absolute;width:5mm;height:5mm;border-radius:50%;background:#fff;bottom:-5mm;left:6mm}
-.cap{font-family:'Kanit';font-size:4.2mm;background:#fff8dc;color:#2d4a22;border-radius:5mm;padding:.6mm 4mm;text-align:center}
-.credit{position:absolute;bottom:7mm;left:50%;transform:translateX(-50%);background:#fff8dc;color:#2d4a22;
- font-family:'Kanit';font-weight:600;font-size:7mm;text-align:center;padding:3mm 12mm;border-radius:12mm;line-height:1.4;
- box-shadow:0 1.5mm 0 #c9973f;white-space:nowrap}
-b{color:#ffe08a}
-</style></head><body>
-<div class="grain"></div>
+body{position:relative;overflow:hidden;font-family:'Sarabun',sans-serif;color:var(--text);
+ -webkit-print-color-adjust:exact;print-color-adjust:exact;
+ background:radial-gradient(120% 80% at 50% 38%,rgba(0,0,0,0) 55%,rgba(0,0,0,.32) 100%),
+  linear-gradient(180deg,#143a23 0%,#1a4a2c 30%,#1d4c2c 60%,#21452a 85%,#1c3a23 100%)}
+#deco{position:absolute;left:0;top:0;width:297mm;height:420mm}
 
-<!-- decorative leaves top -->
-<svg style="position:absolute;left:-10mm;top:-8mm;width:85mm" viewBox="0 0 200 160">
- <g fill="#3f8a43"><path d="M10 10 C80 0 120 60 90 120 C40 100 0 60 10 10Z"/><path d="M60 0 C140 -5 170 40 160 90 C110 80 70 50 60 0Z" fill="#5aa64f"/>
- <path d="M0 70 C50 70 70 120 50 160 C10 140 -5 110 0 70Z" fill="#2f6e35"/></g></svg>
-<svg style="position:absolute;right:-10mm;top:-8mm;width:85mm;transform:scaleX(-1)" viewBox="0 0 200 160">
- <g fill="#3f8a43"><path d="M10 10 C80 0 120 60 90 120 C40 100 0 60 10 10Z"/><path d="M60 0 C140 -5 170 40 160 90 C110 80 70 50 60 0Z" fill="#5aa64f"/>
- <path d="M0 70 C50 70 70 120 50 160 C10 140 -5 110 0 70Z" fill="#2f6e35"/></g></svg>
+header{position:absolute;left:0;right:0;top:9mm;text-align:center}
+h1{font:800 42mm/1.08 'Kanit';color:var(--cream);text-shadow:0 1.5mm 0 #0c2916,0 3mm 8mm rgba(0,0,0,.45)}
+.sub{display:inline-block;margin-top:1.5mm;font:600 8.2mm/1.3 'Kanit';background:var(--cream);color:var(--ink);padding:1.8mm 11mm;border-radius:20mm;box-shadow:0 1.4mm 0 var(--gold),0 3mm 6mm rgba(0,0,0,.3)}
 
-<div class="wrap">
+main{position:absolute;left:15mm;right:15mm;top:86mm;bottom:58mm;display:flex;flex-direction:column;justify-content:space-between}
+.row{display:grid;gap:8mm;align-items:stretch}
+.r1,.r4{grid-template-columns:1fr 98mm}
+.r2{grid-template-columns:1fr 50mm 1fr;gap:6mm;align-items:stretch}
+.r3{grid-template-columns:1.1fr 1fr;align-items:stretch}
+
+.card{position:relative;border-radius:6mm;padding:10.5mm 7mm 5.5mm;
+ background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.035));border:.5mm solid rgba(255,245,218,.25)}
+.tag{position:absolute;top:-7mm;left:5mm;display:flex;align-items:center;gap:2.6mm;white-space:nowrap;
+ background:var(--cream);color:var(--ink);font:600 7.4mm/1.3 'Kanit';padding:1.4mm 7mm 1.4mm 1.4mm;border-radius:20mm;box-shadow:0 1.2mm 0 var(--gold)}
+.ic{flex:none;width:10mm;height:10mm;border-radius:50%;background:var(--orange);display:grid;place-items:center;box-shadow:inset 0 -.8mm 0 rgba(0,0,0,.16)}
+.ic svg{width:6.4mm;height:6.4mm;fill:none;stroke:#fff;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+
+p,li{font-size:5mm;line-height:1.56}
+b{color:var(--hl);font-weight:700;white-space:nowrap}
+ul,ol{list-style:none}
+li{position:relative;padding-left:7.5mm}
+li+li{margin-top:.5mm}
+ul li::before{content:"";position:absolute;left:1.3mm;top:2.8mm;width:2.5mm;height:2.5mm;border-radius:50%;background:var(--hl);box-shadow:0 0 0 .8mm rgba(255,215,106,.2)}
+ol{counter-reset:n}
+ol li{counter-increment:n;padding-left:9mm}
+ol li::before{content:counter(n);position:absolute;left:0;top:1mm;width:6mm;height:6mm;border-radius:50%;background:var(--hl);color:var(--ink);font:600 3.8mm/6mm 'Kanit';text-align:center}
+.lead{margin-bottom:.5mm}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:1.8mm;margin-top:2.5mm}
+.chips span{font:500 4.1mm/1.25 'Kanit';color:#ffe7a0;border:.45mm solid rgba(255,215,106,.5);border-radius:6mm;padding:.7mm 3.4mm;background:rgba(255,215,106,.08)}
+.chips .lab{border:0;background:none;padding:0 1mm 0 0;color:var(--text)}
+
+.fig{position:relative}
+.frame{position:relative;border:3.4mm solid var(--wood);border-radius:3mm;background:#f6efd9;
+ box-shadow:0 0 0 .7mm #8a5220,0 2mm 0 .7mm #5a3112,0 4mm 9mm rgba(0,0,0,.4)}
+.frame>svg{display:block;width:100%;height:100%}
+.f1{height:60mm}.f2{height:56mm}
+.bubble{position:absolute;display:grid;place-items:center;text-align:center;background:#fff;color:var(--ink);font:500 4.6mm/1.25 'Kanit';border-radius:50%;box-shadow:0 1mm 3mm rgba(0,0,0,.3)}
+.bubble i{position:absolute;background:#fff;border-radius:50%;box-shadow:0 .6mm 1.5mm rgba(0,0,0,.25)}
+.scopewrap{align-self:center}
+.scope{position:relative;width:48mm;height:48mm;margin:0 auto;border-radius:50%;border:3mm solid var(--wood);overflow:hidden;background:#eef7e4;
+ box-shadow:0 0 0 .8mm #8a5220,0 2mm 0 .8mm #5a3112,0 4mm 9mm rgba(0,0,0,.4)}
+.scope svg{display:block;width:100%;height:100%}
+.scope::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(0,0,0,0) 62%,rgba(40,60,20,.28) 100%)}
+.cap{display:block;width:max-content;margin:3.4mm auto 0;font:500 4mm/1.3 'Kanit';background:var(--cream);color:var(--ink);border-radius:5mm;padding:.7mm 4mm;box-shadow:0 .9mm 0 var(--gold)}
+.lbl{position:absolute;bottom:2mm;transform:translateX(-50%);display:flex;align-items:center;gap:1.2mm;white-space:nowrap;font:600 4mm/1.3 'Kanit';color:#fff;padding:.6mm 3.2mm .6mm 2mm;border-radius:5mm;box-shadow:0 .7mm 0 rgba(0,0,0,.25)}
+.lbl svg{width:3.8mm;height:3.8mm;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.lbl.ok{left:25%;background:#3d8a3e}.lbl.bad{left:75%;background:#c9532f}
+.sprig{position:absolute;width:24mm;height:12mm}
+
+.sign{position:absolute;left:50%;bottom:25mm;transform:translateX(-50%);white-space:nowrap;text-align:center;
+ font:600 6mm/1.45 'Kanit';color:#3b2410;padding:4.4mm 13mm 3mm;border-radius:3.5mm;border:.8mm solid #8a5220;
+ background:repeating-linear-gradient(178deg,rgba(130,75,25,0) 0 3.2mm,rgba(130,75,25,.09) 3.2mm 3.7mm),linear-gradient(180deg,#f3c886,#dda45c);
+ box-shadow:0 1.8mm 0 #6b3a14,0 4mm 9mm rgba(0,0,0,.45)}
+.sign .by{position:absolute;top:-4.4mm;left:50%;transform:translateX(-50%);font:500 3.9mm/1.3 'Kanit';color:var(--cream);background:#2f6b39;border:.5mm solid #1d4a27;border-radius:5mm;padding:.5mm 5mm}
+.nail{position:absolute;width:2mm;height:2mm;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f3eee2,#7d6b55 70%)}
+</style></head>
+<body>
+
+<svg id="deco" viewBox="0 0 297 420">
+ <defs>
+  <radialGradient id="glow"><stop offset="0" stop-color="#a6e08a" stop-opacity=".26"/><stop offset="1" stop-color="#a6e08a" stop-opacity="0"/></radialGradient>
+  <linearGradient id="soilBand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5c3d23"/><stop offset="1" stop-color="#2d1e11"/></linearGradient>
+  <linearGradient id="post" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9d622c"/><stop offset=".5" stop-color="#c98a45"/><stop offset="1" stop-color="#8d5427"/></linearGradient>
+  <radialGradient id="gallG" cx=".38" cy=".34" r=".78"><stop offset="0" stop-color="#fff8e4"/><stop offset=".55" stop-color="#f0daa9"/><stop offset="1" stop-color="#c49a5c"/></radialGradient>
+  <g id="gall"><ellipse cx="-4" cy=".6" rx="5" ry="4.2"/><ellipse cx="3.6" cy="-.4" rx="5.6" ry="4.6"/><ellipse cx="0" cy="1.2" rx="6" ry="4.4"/><ellipse cx="-.6" cy="-1.8" rx="3.8" ry="3"/></g>
+ </defs>
+ <ellipse cx="148.5" cy="44" rx="135" ry="52" fill="url(#glow)"/>
+ <g id="bokeh"></g><g id="specks"></g>
+ <g id="leavesL"></g><g id="leavesR" transform="translate(297 0) scale(-1 1)"></g>
+ <g id="flies"></g><g id="ground"></g>
+</svg>
+
+<header>
  <h1>โรครากปม</h1>
- <span class="sub">ศัตรูใต้ดินที่มองไม่เห็น แต่ทำลายพืชได้จริง</span>
+ <div class="sub">ศัตรูใต้ดินที่มองไม่เห็น แต่ทำลายพืชได้จริง</div>
+</header>
+
+<main>
+ <!-- แถว 1 -->
+ <section class="row r1">
+  <div class="card">
+   <div class="tag"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3 20.5 20.5"/><path d="M7.2 11.3c1-1.9 2.2 1.8 3.3 0s2.2-1.9 3.2-.1"/></svg></span>สาเหตุการเกิดโรค</div>
+   <p>โรครากปมเกิดจาก <b>ไส้เดือนฝอยรากปม (<i>Meloidogyne</i> spp.)</b> ซึ่งเป็นหนอนตัวกลมขนาดเล็กมาก อาศัยอยู่ในดิน
+   ตัวอ่อนจะเจาะเข้าไปในรากเพื่อดูดกินน้ำเลี้ยง ทำให้เซลล์รากขยายตัวผิดปกติจนเกิดเป็น <b>ปมหรือก้อนบวม</b>
+   รากจึงดูดน้ำและธาตุอาหารได้น้อยลง</p>
+   <div class="chips"><span class="lab">พืชที่มักพบ</span><span>พริก</span><span>มะเขือเทศ</span><span>แตงกวา</span><span>ฝรั่ง</span><span>กล้วย</span></div>
+  </div>
+  <div class="fig">
+   <svg class="sprig" viewBox="0 0 40 20" style="left:-7mm;top:-6.5mm"></svg>
+   <div class="frame f1">
+    <svg id="f1" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice">
+     <defs>
+      <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9f6dc"/><stop offset="1" stop-color="#cde6b6"/></linearGradient>
+      <linearGradient id="soil1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8d5c33"/><stop offset="1" stop-color="#5a381c"/></linearGradient>
+     </defs>
+     <rect width="300" height="76" fill="url(#sky1)"/>
+     <circle cx="266" cy="22" r="18" fill="#fff3b8" opacity=".35"/><circle cx="266" cy="22" r="11" fill="#fff3b8"/>
+     <path d="M0 72 Q 40 68 80 72 T 160 72 T 240 72 T 320 72 V200 H0Z" fill="url(#soil1)"/>
+     <path d="M0 72 Q 40 68 80 72 T 160 72 T 240 72 T 320 72 V80 Q 240 84 160 80 T 0 80Z" fill="#6f4627" opacity=".7"/>
+     <g id="f1specks"></g><g id="f1roots"></g><g id="f1worms"></g><g id="f1grass"></g>
+     <g id="f1plant">
+      <path d="M150 74 C 149 60, 152 44, 150 16" stroke="#4e8a3a" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+      <path d="M150 50 C 140 44, 134 40, 128 32" stroke="#4e8a3a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M150 38 C 160 32, 166 28, 172 20" stroke="#4e8a3a" stroke-width="2" fill="none" stroke-linecap="round"/>
+     </g>
+    </svg>
+   </div>
+   <div class="bubble" style="right:-8mm;bottom:-4mm;width:38mm;height:24mm">รากบวมเป็นปม<br>เหมือนลูกปัด
+    <i style="width:4.4mm;height:4.4mm;left:3mm;top:-1.6mm"></i><i style="width:2.6mm;height:2.6mm;left:-.6mm;top:-5.2mm"></i></div>
+  </div>
+ </section>
+
+ <!-- แถว 2 -->
+ <section class="row r2">
+  <div class="card">
+   <div class="tag"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 19C5 10.5 10 5.5 19.5 4.5 19.5 14 14 19 5 19z"/><path d="M5 19 13.5 10.5"/></svg></span>อาการที่พบ</div>
+   <ul>
+    <li>รากมีปมบวมขนาดต่าง ๆ เรียงต่อกัน</li>
+    <li>ใบเหลือง ซีด คล้ายขาดธาตุอาหาร</li>
+    <li>ต้นแคระแกร็น เจริญเติบโตช้า</li>
+    <li>เหี่ยวง่ายตอนกลางวัน แม้ดินมีน้ำ</li>
+    <li>ผลผลิตลดลง คุณภาพต่ำ</li>
+   </ul>
+  </div>
+  <div class="fig scopewrap">
+   <div class="scope">
+    <svg id="scope" viewBox="0 0 100 100">
+     <defs>
+      <radialGradient id="field"><stop offset="0" stop-color="#fbfef5"/><stop offset="1" stop-color="#d4eac3"/></radialGradient>
+      <linearGradient id="wormG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff7e2"/><stop offset="1" stop-color="#e6cb98"/></linearGradient>
+     </defs>
+     <rect width="100" height="100" fill="url(#field)"/>
+    </svg>
+   </div>
+   <span class="cap">ไส้เดือนฝอยรากปม (ส่องกล้อง)</span>
+  </div>
+  <div class="card">
+   <div class="tag"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.3"/><path d="M12 9.2V3.5M9.5 6 12 3.5 14.5 6"/><path d="M9.6 13.6 4.8 17M5.3 13.6 4.8 17 8.2 17.4"/><path d="M14.4 13.6 19.2 17M18.7 13.6 19.2 17 15.8 17.4"/></svg></span>การแพร่ระบาด</div>
+   <p class="lead">แพร่ได้หลายทาง เช่น</p>
+   <ul>
+    <li>ดินที่มีไส้เดือนฝอยปนอยู่</li>
+    <li>ต้นกล้าที่ติดเชื้อ</li>
+    <li>น้ำที่ไหลบ่าผ่านแปลงปลูก</li>
+    <li>เครื่องมือ รองเท้า ที่มีดินติด</li>
+   </ul>
+  </div>
+ </section>
+
+ <!-- แถว 3 -->
+ <section class="row r3">
+  <div class="card">
+   <div class="tag"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3 4.8 6v5.4c0 4.4 3 7.9 7.2 9.4 4.2-1.5 7.2-5 7.2-9.4V6z"/><path d="m8.7 12 2.4 2.4 4.3-4.6"/></svg></span>การป้องกัน</div>
+   <ol>
+    <li>ใช้ต้นกล้าที่สะอาด ปลอดโรค</li>
+    <li>ปลูกพืชหมุนเวียน เช่น ดาวเรือง ปอเทือง</li>
+    <li>ไถพรวนตากดินกลางแดดก่อนปลูก</li>
+    <li>ใส่ปุ๋ยหมัก ปุ๋ยคอก เพิ่มอินทรียวัตถุในดิน</li>
+    <li>ทำความสะอาดเครื่องมือหลังใช้งาน</li>
+    <li>เลือกใช้พันธุ์พืชที่ต้านทานโรค</li>
+   </ol>
+  </div>
+  <div class="card">
+   <div class="tag"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21v-8.5"/><path d="M12 12.5C12 8.6 9.3 6 5 6c0 3.9 2.8 6.5 7 6.5z"/><path d="M12 10.5c0-3.6 2.6-6 6.6-6 0 3.6-2.6 6-6.6 6z"/></svg></span>การรักษา</div>
+   <ul>
+    <li>ถอนต้นที่เป็นโรครุนแรงพร้อมรากไปเผาทำลาย</li>
+    <li>ใช้ชีวภัณฑ์ เช่น <b>เชื้อราพาซิโลมัยซีส</b> หรือ <b>ไตรโคเดอร์มา</b> ช่วยทำลายไข่ไส้เดือนฝอย</li>
+    <li>บำรุงด้วยปุ๋ยอินทรีย์ และให้น้ำสม่ำเสมอ</li>
+    <li>หากระบาดรุนแรง ควรปรึกษาเจ้าหน้าที่เกษตร</li>
+   </ul>
+  </div>
+ </section>
+
+ <!-- แถว 4 -->
+ <section class="row r4">
+  <div class="card">
+   <div class="tag"><span class="ic"><svg viewBox="0 0 24 24"><path d="M9.2 18h5.6M10.2 21h3.6"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1 1.3 1 2.2h5.2c0-.9.3-1.6 1-2.2A6 6 0 0 0 12 3z"/></svg></span>ข้อควรรู้เพิ่มเติม</div>
+   <p>ไส้เดือนฝอยยาวเพียงประมาณ 0.5 มม. มองด้วยตาเปล่าไม่เห็น ตรวจได้โดย <b>ถอนต้นมาดูราก</b>
+   และอย่าสับสนกับ <b>ปมไรโซเบียม</b> ของพืชตระกูลถั่วซึ่งมีประโยชน์ ปมแบบนี้ติดอยู่ข้างรากและแกะออกง่าย
+   ส่วนปมโรครากปมเป็นเนื้อเดียวกับรากจึงแกะไม่ออก</p>
+  </div>
+  <div class="fig">
+   <svg class="sprig" viewBox="0 0 40 20" style="right:-7mm;top:-6.5mm;transform:scaleX(-1)"></svg>
+   <div class="frame f2">
+    <svg id="f2" viewBox="0 0 300 170" preserveAspectRatio="xMidYMid slice">
+     <rect width="150" height="170" fill="#eef6e2"/><rect x="150" width="150" height="170" fill="#f8eedb"/>
+     <line x1="150" y1="8" x2="150" y2="150" stroke="#c9a46a" stroke-width="1.4" stroke-dasharray="5 4"/>
+     <g id="f2L" transform="translate(75 24) scale(.92)"></g>
+     <g id="f2R" transform="translate(225 24) scale(.92)"></g>
+    </svg>
+    <span class="lbl ok"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>รากปกติ</span>
+    <span class="lbl bad"><svg viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg>รากเป็นโรค</span>
+   </div>
+  </div>
+ </section>
+</main>
+
+<div class="sign"><span class="by">จัดทำโดย</span>
+ นายณัฐธัญ ชีพนุรัตน์ เลขที่ 2 ม.5/7<br>นายอภิวิชญ์ อิทธิพัทธ์วรกุล เลขที่ 28 ม.5/7
+ <i class="nail" style="left:2.2mm;top:2.2mm"></i><i class="nail" style="right:2.2mm;top:2.2mm"></i>
+ <i class="nail" style="left:2.2mm;bottom:2.2mm"></i><i class="nail" style="right:2.2mm;bottom:2.2mm"></i>
 </div>
 
-<!-- 1 สาเหตุ -->
-<div class="sec" style="left:18mm;top:92mm;width:150mm">
- <div class="tag">สาเหตุการเกิดโรค</div>
- <p>โรครากปมเกิดจาก <b>ไส้เดือนฝอยรากปม (Meloidogyne spp.)</b> ซึ่งเป็นหนอนตัวกลมขนาดเล็กมาก อาศัยอยู่ในดิน
- ตัวอ่อนจะเจาะเข้าไปในรากพืชเพื่อดูดกินอาหาร ทำให้เซลล์รากขยายตัวผิดปกติจนเกิดเป็น <b>ปมหรือก้อนบวม</b>
- รากจึงดูดน้ำและธาตุอาหารได้น้อยลง มักพบในพริก มะเขือเทศ แตงกวา ฝรั่ง และพืชผักหลายชนิด</p>
-</div>
-<div class="sec frame" style="left:180mm;top:94mm;width:96mm;height:68mm">
- <svg viewBox="0 0 240 170" width="100%" height="100%">
-  <rect width="240" height="60" fill="#cfe8c0"/><rect y="60" width="240" height="110" fill="#8a5a33"/>
-  <g fill="#5d3b1f" opacity=".5"><circle cx="30" cy="90" r="3"/><circle cx="200" cy="140" r="4"/><circle cx="160" cy="80" r="2.5"/><circle cx="60" cy="150" r="3"/></g>
-  <path d="M120 60 L120 20" stroke="#3d7a35" stroke-width="5"/>
-  <path d="M120 35 C95 20 85 30 90 40 C100 42 112 40 120 35Z M120 28 C145 12 155 22 150 32 C140 34 128 33 120 28Z" fill="#7fbf5b"/>
-  <path d="M120 60 C118 90 110 110 95 140 M120 60 C125 95 135 120 150 150 M120 70 C100 80 75 90 50 100 M120 72 C145 85 170 90 200 100 M118 95 C105 120 80 125 60 135" stroke="#e9d9b3" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-  <g fill="#f1e2bd" stroke="#b89a64" stroke-width="1.5">
-   <ellipse cx="108" cy="122" rx="9" ry="7"/><ellipse cx="140" cy="128" rx="10" ry="8"/><ellipse cx="72" cy="94" rx="8" ry="6"/>
-   <ellipse cx="178" cy="94" rx="9" ry="6"/><ellipse cx="85" cy="128" rx="7" ry="6"/><ellipse cx="128" cy="96" rx="6" ry="5"/></g>
- </svg>
-</div>
-<div class="bubble" style="left:238mm;top:138mm;width:42mm">รากบวม<br>เป็นปม<br>เหมือนลูกปัด</div>
+<script>
+(()=>{
+const NS='http://www.w3.org/2000/svg';
+let seed=20261113;
+const rand=()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
+const R=(a,b)=>a+(b-a)*rand();
+const f=n=>Math.round(n*100)/100;
+const $=id=>document.getElementById(id);
+const pick=a=>a[Math.floor(rand()*a.length)];
+function el(tag,a,p){const e=document.createElementNS(NS,tag);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
 
-<!-- 2 อาการ -->
-<div class="sec" style="left:18mm;top:178mm;width:120mm">
- <div class="tag">อาการที่พบ</div>
- <ul>
-  <li>รากมีปมบวมขนาดต่าง ๆ เรียงต่อกัน</li>
-  <li>ใบเหลือง ซีด คล้ายขาดธาตุอาหาร</li>
-  <li>ต้นแคระแกร็น เจริญเติบโตช้า</li>
-  <li>เหี่ยวง่ายตอนกลางวันแม้ดินมีน้ำ</li>
-  <li>ผลผลิตลดลง คุณภาพต่ำ</li>
- </ul>
-</div>
-<!-- nematode illustration -->
-<div class="sec" style="left:132mm;top:186mm;width:58mm">
- <div style="width:52mm;height:52mm;border-radius:50%;background:#f6efd9;border:3mm solid #c9822f;overflow:hidden;margin:auto">
-  <svg viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" fill="#e9f3dc"/>
-   <path d="M15 70 C25 40 45 75 55 45 C62 25 78 35 85 25" stroke="#d9b98a" stroke-width="9" fill="none" stroke-linecap="round"/>
-   <path d="M15 70 C25 40 45 75 55 45 C62 25 78 35 85 25" stroke="#f5e6c8" stroke-width="5" fill="none" stroke-linecap="round"/>
-   <circle cx="84" cy="26" r="1.6" fill="#6b4b2a"/></svg></div>
- <div class="cap" style="margin:2mm auto 0;width:max-content">ไส้เดือนฝอย (ขยาย)</div>
-</div>
+/* ---------- ใบไม้ ---------- */
+function leaf(g,x,y,len,ang,col,wr=.32,vein='rgba(255,255,255,.2)',shade=true){
+ const w=len*wr,gg=el('g',{transform:`translate(${f(x)} ${f(y)}) rotate(${f(ang)})`},g);
+ el('path',{d:`M0 0 C ${f(len*.22)} ${f(-w)} ${f(len*.68)} ${f(-w*1.05)} ${f(len)} 0 C ${f(len*.68)} ${f(w*1.05)} ${f(len*.22)} ${f(w)} 0 0Z`,fill:col},gg);
+ if(shade)el('path',{d:`M0 0 C ${f(len*.22)} ${f(w)} ${f(len*.68)} ${f(w*1.05)} ${f(len)} 0Z`,fill:'rgba(0,0,0,.13)'},gg);
+ const sw=Math.max(.15,len*.012);
+ el('path',{d:`M${f(len*.02)} 0 Q ${f(len*.5)} ${f(-w*.06)} ${f(len*.95)} 0`,stroke:vein,'stroke-width':f(sw),fill:'none'},gg);
+ for(let k=1;k<=4;k++){const x0=len*(.08+k*.15),ey=w*(.62-.5*x0/len);
+  for(const s of[-1,1])el('path',{d:`M${f(x0)} 0 Q ${f(x0+len*.06)} ${f(s*ey*.5)} ${f(x0+len*.14)} ${f(s*ey)}`,stroke:vein,'stroke-width':f(sw*.6),fill:'none'},gg);}
+ return gg;
+}
+function fern(g,x,y,len,ang,col){
+ const gg=el('g',{transform:`translate(${f(x)} ${f(y)}) rotate(${f(ang)})`},g);
+ el('path',{d:`M0 0 Q ${f(len/2)} ${f(len*.06)} ${f(len)} ${f(len*.02)}`,stroke:col,'stroke-width':.7,fill:'none'},gg);
+ const n=10;
+ for(let i=1;i<=n;i++){const t=i/(n+.7),px=len*t,py=2*(1-t)*t*len*.06+t*t*len*.02,s=len*.2*(1-t*.72);
+  leaf(gg,px,py,s,-55+t*18,col,.34,'rgba(255,255,255,.14)',false);
+  leaf(gg,px,py,s,55-t*18,col,.34,'rgba(255,255,255,.14)',false);}
+ leaf(gg,len*.96,len*.02,len*.09,0,col,.38,'rgba(255,255,255,.14)',false);
+}
+/* ---------- ไส้เดือนฝอย ---------- */
+function worm(g,o){
+ const {cx,cy,len,ang=0,w,amp,waves,phase=0,fill,stroke,sw=.5,detail=false}=o;
+ const N=96,C=[],T=[],Lp=[],Rp=[];
+ for(let i=0;i<=N;i++){const s=i/N;C.push([(s-.5)*len,amp*Math.sin(2*Math.PI*waves*s+phase)])}
+ const half=s=>{let k=Math.pow(Math.min(1,s/.24),.8);if(s>.92)k*=Math.sqrt(Math.max(0,1-((s-.92)/.08)**2));return w/2*k};
+ for(let i=0;i<=N;i++){const a=C[Math.max(0,i-1)],b=C[Math.min(N,i+1)],dx=b[0]-a[0],dy=b[1]-a[1],d=Math.hypot(dx,dy)||1,nx=-dy/d,ny=dx/d,h=half(i/N);
+  T.push(Math.atan2(dy,dx)*180/Math.PI);Lp.push([C[i][0]+nx*h,C[i][1]+ny*h]);Rp.push([C[i][0]-nx*h,C[i][1]-ny*h])}
+ const gg=el('g',{transform:`translate(${f(cx)} ${f(cy)}) rotate(${f(ang)})`},g);
+ const pts=Lp.concat(Rp.slice().reverse());
+ el('path',{d:'M'+pts.map(p=>f(p[0])+' '+f(p[1])).join(' L')+'Z',fill,stroke,'stroke-width':sw,'stroke-linejoin':'round'},gg);
+ if(detail){
+  for(let i=6;i<N-4;i+=3)el('line',{x1:f(Lp[i][0]),y1:f(Lp[i][1]),x2:f(Rp[i][0]),y2:f(Rp[i][1]),stroke:'rgba(150,105,50,.22)','stroke-width':.25},gg);
+  const seg=(a,b)=>C.slice(Math.round(a*N),Math.round(b*N)+1).map(p=>f(p[0])+' '+f(p[1])).join(' L');
+  el('path',{d:'M'+seg(.28,.86),stroke:'#d4ad6c','stroke-width':f(w*.16),'stroke-dasharray':'1.4 1','stroke-linecap':'round',fill:'none'},gg);
+  const hl=[];for(let i=Math.round(.18*N);i<=Math.round(.9*N);i++)hl.push([Lp[i][0]*.55+C[i][0]*.45,Lp[i][1]*.55+C[i][1]*.45]);
+  el('path',{d:'M'+hl.map(p=>f(p[0])+' '+f(p[1])).join(' L'),stroke:'rgba(255,255,255,.75)','stroke-width':f(w*.1),'stroke-linecap':'round',fill:'none'},gg);
+  const bi=Math.round(.895*N);
+  el('ellipse',{cx:f(C[bi][0]),cy:f(C[bi][1]),rx:f(w*.17),ry:f(w*.12),transform:`rotate(${f(T[bi])} ${f(C[bi][0])} ${f(C[bi][1])})`,fill:'#d6b073'},gg);
+  el('path',{d:'M'+seg(.955,.99),stroke:'#6b4824','stroke-width':.45,'stroke-linecap':'round',fill:'none'},gg);
+ }
+ return gg;
+}
+/* ---------- ราก + ปม ---------- */
+function drawRoots(g,roots,o){
+ const hairG=el('g',{fill:'none',stroke:o.hair,'stroke-linecap':'round'},g);
+ const og=el('g',{fill:'none',stroke:o.outline,'stroke-linecap':'round','stroke-linejoin':'round'},g);
+ const ig=el('g',{fill:'none',stroke:o.fill,'stroke-linecap':'round','stroke-linejoin':'round'},g);
+ const ps=roots.map(r=>{el('path',{d:r.d,'stroke-width':f(r.w+1.5)},og);return el('path',{d:r.d,'stroke-width':r.w},ig)});
+ ps.forEach(p=>{const L=p.getTotalLength();
+  for(let i=0;i<(o.hairs||0);i++){const l=L*R(.12,.98),a=p.getPointAtLength(l),b=p.getPointAtLength(Math.min(L,l+.6));
+   let tx=b.x-a.x,ty=b.y-a.y;const d=Math.hypot(tx,ty)||1;tx/=d;ty/=d;const s=rand()<.5?-1:1,nx=-ty*s,ny=tx*s,len=R(o.h0,o.h1);
+   el('path',{d:`M${f(a.x)} ${f(a.y)} Q ${f(a.x+nx*len*.6)} ${f(a.y+ny*len*.6)} ${f(a.x+(nx*.75+tx*.6)*len)} ${f(a.y+(ny*.75+ty*.6)*len)}`,'stroke-width':o.hw},hairG)}});
+ (o.galls||[]).forEach(([ri,fr,s])=>{const p=ps[ri],L=p.getTotalLength(),a=p.getPointAtLength(L*fr),b=p.getPointAtLength(Math.min(L,L*fr+1));
+  const ang=Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI;
+  el('use',{href:'#gall',transform:`translate(${f(a.x)} ${f(a.y)}) rotate(${f(ang)}) scale(${s})`,fill:'url(#gallG)',stroke:o.gallStroke||'#a57a42','stroke-width':f(.7/s)},g)});
+}
+function grassRow(g,x0,x1,yfn,h0,h1,cols,step){let x=x0;while(x<x1){const h=R(h0,h1),lean=R(-2,2),w=R(.6,1.1),y=yfn(x)+1.2;
+ el('path',{d:`M${f(x-w)} ${f(y)} Q ${f(x+lean*.2)} ${f(y-h*.55)} ${f(x+lean)} ${f(y-h)} Q ${f(x+lean*.25+w*.3)} ${f(y-h*.5)} ${f(x+w)} ${f(y)}Z`,fill:pick(cols)},g);x+=R(step[0],step[1]);}}
+function flower(g,x,y,r,petal,center,n){const gg=el('g',{transform:`translate(${f(x)} ${f(y)}) rotate(${f(R(0,40))})`},g);
+ for(let k=0;k<n;k++)el('ellipse',{cx:0,cy:f(-r*.62),rx:f(r*(n>6?.3:.42)),ry:f(r*.62),fill:petal,stroke:'rgba(0,0,0,.08)','stroke-width':.2,transform:`rotate(${f(k*360/n)})`},gg);
+ el('circle',{r:f(r*.34),fill:center},gg);el('circle',{cx:f(-r*.1),cy:f(-r*.1),r:f(r*.12),fill:'rgba(255,255,255,.45)'},gg);}
+function tulip(g,x,y,s,col){const t=el('g',{transform:`translate(${x} ${y}) scale(${s})`},g);
+ el('path',{d:'M0 4 C -5 3, -6 -4, -4.6 -8 L -2.2 -5 L 0 -9 L 2.2 -5 L 4.6 -8 C 6 -4, 5 3, 0 4Z',fill:col},t);
+ el('path',{d:'M0 4 C -2 1, -2 -4, 0 -9',stroke:'rgba(0,0,0,.14)','stroke-width':.5,fill:'none'},t);}
+function stem(g,x0,y0,x1,y1,bend){el('path',{d:`M${x0} ${y0} Q ${(x0+x1)/2+bend} ${(y0+y1)/2} ${x1} ${y1}`,stroke:'#3f8a3c','stroke-width':1.1,fill:'none','stroke-linecap':'round'},g)}
+function fly(g,x,y,s,a,c1,c2){const b=el('g',{transform:`translate(${x} ${y}) rotate(${a}) scale(${s})`},g);
+ el('path',{d:'M0 0 C -5 -11, -17 -10, -15 -2 C -14 3, -6 3, 0 0Z',fill:c1},b);el('path',{d:'M0 0 C 5 -11, 17 -10, 15 -2 C 14 3, 6 3, 0 0Z',fill:c1},b);
+ el('path',{d:'M0 0 C -3 7, -11 10, -11 5 C -10 1, -4 .5, 0 0Z',fill:c2},b);el('path',{d:'M0 0 C 3 7, 11 10, 11 5 C 10 1, 4 .5, 0 0Z',fill:c2},b);
+ el('circle',{cx:-9.5,cy:-4,r:1.7,fill:'#e48b35'},b);el('circle',{cx:9.5,cy:-4,r:1.7,fill:'#e48b35'},b);
+ el('ellipse',{rx:1,ry:5.2,fill:'#3b2a18'},b);
+ el('path',{d:'M-.4 -4.6 C -1.6 -8, -3 -9.4, -4.4 -9.8 M.4 -4.6 C 1.6 -8, 3 -9.4, 4.4 -9.8',stroke:'#3b2a18','stroke-width':.5,fill:'none','stroke-linecap':'round'},b);}
 
-<!-- 3 แพร่ระบาด -->
-<div class="sec" style="left:196mm;top:178mm;width:86mm">
- <div class="tag">การแพร่ระบาด</div>
- <p>แพร่ได้หลายทาง เช่น</p>
- <ul>
-  <li>ดินที่มีไส้เดือนฝอยปนอยู่</li>
-  <li>ต้นกล้าที่ติดเชื้อ</li>
-  <li>น้ำที่ไหลบ่าผ่านแปลง</li>
-  <li>เครื่องมือ รองเท้า ที่มีดินติด</li>
- </ul>
-</div>
+const greens=['#2c6e36','#3a8743','#4c9d4b','#24602f'];
 
-<!-- 4 ป้องกัน -->
-<div class="sec" style="left:18mm;top:250mm;width:140mm">
- <div class="tag">การป้องกัน</div>
- <ol>
-  <li>ใช้ต้นกล้าที่สะอาด ปลอดโรค</li>
-  <li>ปลูกพืชหมุนเวียน เช่น ดาวเรือง ปอเทือง</li>
-  <li>ไถตากดินกลางแดดก่อนปลูก</li>
-  <li>ใส่ปุ๋ยหมัก ปุ๋ยคอก เพิ่มอินทรียวัตถุ</li>
-  <li>ทำความสะอาดเครื่องมือหลังใช้งาน</li>
-  <li>ใช้พันธุ์พืชที่ต้านทานโรค</li>
- </ol>
-</div>
+/* ---------- พื้นหลัง ---------- */
+for(let i=0;i<16;i++)el('circle',{cx:f(R(0,297)),cy:f(R(60,380)),r:f(R(3,13)),fill:'#d9f2c0',opacity:f(R(.02,.05))},$('bokeh'));
+for(let i=0;i<1600;i++){const lt=rand()<.5;el('circle',{cx:f(R(0,297)),cy:f(R(0,400)),r:f(R(.12,.38)),fill:lt?'#fff':'#000',opacity:f(lt?R(.04,.11):R(.06,.16))},$('specks'))}
+for(const id of['leavesL','leavesR']){const g=$(id);
+ leaf(g,-8,10,62,66,'#235f30',.3);fern(g,-4,36,56,26,'#2f7a3b');leaf(g,-8,-4,62,17,'#2e7338',.3);
+ leaf(g,-8,6,56,42,'#3d8c45',.32);leaf(g,-2,-8,46,-1,'#4a9b4a',.3);fern(g,8,-6,42,50,'#58a64e');leaf(g,0,2,38,28,'#6ab657',.32);}
+fly($('flies'),276,68,.5,14,'#fff4c8','#ffd98a');fly($('flies'),14,73,.4,-16,'#fff4c8','#ffcf7a');
 
-<!-- 5 รักษา -->
-<div class="sec" style="left:168mm;top:250mm;width:114mm">
- <div class="tag">การรักษา</div>
- <p>ถอนต้นที่เป็นโรคหนักพร้อมรากออกไปทำลาย ใช้ชีวภัณฑ์ เช่น <b>เชื้อราไตรโคเดอร์มา</b>
- หรือ <b>เชื้อราพาซิโลมัยซีส</b> ซึ่งช่วยทำลายไข่ไส้เดือนฝอย ร่วมกับบำรุงต้นด้วยปุ๋ยอินทรีย์และให้น้ำสม่ำเสมอ</p>
-</div>
+/* ---------- ดินด้านล่าง ---------- */
+const G=$('ground'),yb=x=>398+1.5*Math.sin(x/16)+.9*Math.sin(x/6.7+1);
+let d=`M-1 ${f(yb(0))}`;for(let x=0;x<=298;x+=1.5)d+=` L${f(x)} ${f(yb(x))}`;d+=' L298 421 L-1 421Z';
+el('path',{d,fill:'url(#soilBand)'},G);
+for(let i=0;i<320;i++){const x=R(0,297);el('circle',{cx:f(x),cy:f(R(yb(x)+1.5,420)),r:f(R(.15,.6)),fill:rand()<.55?'#2a1a0e':'#9c7650',opacity:f(R(.35,.8))},G)}
+for(let i=0;i<14;i++){const x=R(4,293);el('ellipse',{cx:f(x),cy:f(R(yb(x)+5,417)),rx:f(R(1,2.4)),ry:f(R(.7,1.5)),fill:'#7d5f42',stroke:'#4a3420','stroke-width':.25},G)}
+const rg=el('g',{fill:'none',stroke:'#e2cfa3','stroke-linecap':'round',opacity:.55},G);
+[6,18,31,44,58,70,84,226,240,253,266,279,291].forEach(x0=>{const y0=yb(x0),x1=x0+R(-5,5),y1=y0+R(12,19);
+ el('path',{d:`M${x0} ${f(y0)} C ${f(x0+R(-3,3))} ${f(y0+5)} ${f(x1+R(-3,3))} ${f(y1-6)} ${f(x1)} ${f(y1)}`,'stroke-width':.55},rg);
+ el('path',{d:`M${f(x0+R(-1,1))} ${f(y0+5)} q ${f(R(-6,6))} ${f(R(2,4))} ${f(R(-8,8))} ${f(R(6,9))}`,'stroke-width':.35},rg);
+ if(rand()<.6)el('use',{href:'#gall',transform:`translate(${f((x0+x1)/2)} ${f((y0+y1)/2)}) rotate(${f(R(60,120))}) scale(.17)`,fill:'url(#gallG)',stroke:'#a57a42','stroke-width':3},G);});
+worm(G,{cx:60,cy:412,len:8,ang:-12,w:.9,amp:.8,waves:1.2,fill:'#efdcb8',stroke:'#8d6a3d',sw:.2});
+worm(G,{cx:238,cy:411,len:8,ang:18,w:.9,amp:.8,waves:1.2,fill:'#efdcb8',stroke:'#8d6a3d',sw:.2});
+for(const px of[148.5-46,148.5+46])el('rect',{x:f(px-2.6),y:392,width:5.2,height:22,rx:.8,fill:'url(#post)',stroke:'#6b3a14','stroke-width':.4},G);
+grassRow(G,-2,299,yb,3,7.5,greens,[.7,1.6]);
+grassRow(G,-2,58,yb,5,12,greens,[.8,1.8]);grassRow(G,240,299,yb,5,12,greens,[.8,1.8]);
+stem(G,9,399,11,373,-2);leaf(G,10,390,8,-150,'#3f8a3c',.35);flower(G,11,373,5.4,'#f6c431','#d8772a',9);
+stem(G,21,399,23,381,2);leaf(G,22,392,6,-30,'#3f8a3c',.35);flower(G,23,381,4.4,'#e9584d','#ffe08a',5);
+stem(G,33,399,32,375,-1.5);tulip(G,32,375,1.1,'#f28cb1');
+stem(G,44,399,46,385,1.5);flower(G,46,385,3.5,'#fffaf0','#f2b632',9);
+stem(G,53,399,54,390,1);el('circle',{cx:54,cy:390,r:1.4,fill:'#f28cb1'},G);
+stem(G,288,399,286,372,2);leaf(G,287,390,8,-30,'#3f8a3c',.35);flower(G,286,372,5.2,'#b47ad8','#ffe08a',6);
+stem(G,276,399,274,382,-2);flower(G,274,382,4.4,'#fffaf0','#f2b632',9);
+stem(G,264,399,265,375,1.5);leaf(G,264,391,6,-150,'#3f8a3c',.35);tulip(G,265,375,1.1,'#e9584d');
+stem(G,252,399,250,385,-1.5);flower(G,250,385,3.6,'#f6c431','#d8772a',9);
+stem(G,243,399,242,390,-1);el('circle',{cx:242,cy:390,r:1.4,fill:'#b47ad8'},G);
 
-<!-- 6 ข้อควรรู้ -->
-<div class="sec" style="left:18mm;top:326mm;width:150mm">
- <div class="tag">ข้อควรรู้เพิ่มเติม 💡</div>
- <p>ไส้เดือนฝอยมองด้วยตาเปล่าไม่เห็น ตรวจได้โดย <b>ถอนต้นมาดูราก</b> ถ้าพบปมบวมควรรีบจัดการ
- และอย่าสับสนกับปมของพืชตระกูลถั่ว ซึ่งเป็นปมเชื้อไรโซเบียมที่มีประโยชน์ (แกะออกง่าย)</p>
-</div>
-<div class="sec frame" style="left:184mm;top:318mm;width:90mm;height:56mm">
- <svg viewBox="0 0 220 140" width="100%" height="100%"><rect width="220" height="140" fill="#f6efd9"/>
-  <path d="M110 0 L110 30" stroke="#3d7a35" stroke-width="5"/>
-  <path d="M110 30 C105 60 95 90 80 130 M110 30 C118 65 130 95 150 130 M110 40 C80 50 50 60 20 70 M110 42 C140 55 170 60 205 75" stroke="#c9a46a" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <g fill="#e8cf9c" stroke="#9c7a45" stroke-width="1.5"><ellipse cx="97" cy="75" rx="11" ry="9"/><ellipse cx="88" cy="105" rx="9" ry="8"/>
-  <ellipse cx="125" cy="80" rx="10" ry="8"/><ellipse cx="140" cy="112" rx="11" ry="9"/><ellipse cx="50" cy="60" rx="8" ry="6"/><ellipse cx="175" cy="65" rx="9" ry="7"/></g>
-  <circle cx="160" cy="105" r="26" fill="none" stroke="#2d4a22" stroke-width="5"/><path d="M178 124 L200 138" stroke="#2d4a22" stroke-width="8" stroke-linecap="round"/></svg>
-</div>
+/* ---------- กรอบภาพ 1: ต้นพืช + รากเป็นปม ---------- */
+{const sp=$('f1specks');
+ for(let i=0;i<150;i++)el('circle',{cx:f(R(0,300)),cy:f(R(80,200)),r:f(R(.5,1.8)),fill:rand()<.6?'#4f3018':'#b58b5c',opacity:f(R(.35,.8))},sp);
+ for(let i=0;i<9;i++)el('ellipse',{cx:f(R(10,290)),cy:f(R(90,195)),rx:f(R(3,6)),ry:f(R(2,4)),fill:'#a5825c',stroke:'#6e5034','stroke-width':.6},sp);
+ drawRoots($('f1roots'),[
+  {d:'M150 72 C 149 100, 153 130, 148 160 C 146 175, 150 185, 149 198',w:4.4},
+  {d:'M150 84 C 130 90, 105 94, 78 106 C 65 112, 52 114, 38 122',w:3},
+  {d:'M150 86 C 172 92, 198 98, 222 108 C 236 114, 248 116, 262 124',w:3},
+  {d:'M149 114 C 132 124, 116 136, 100 152 C 92 160, 84 164, 72 172',w:2.6},
+  {d:'M150 118 C 168 128, 184 140, 200 156 C 208 164, 216 168, 230 176',w:2.6},
+  {d:'M80 105 C 76 118, 74 128, 68 140',w:1.6},
+  {d:'M220 107 C 224 120, 228 130, 234 142',w:1.6},
+  {d:'M101 151 C 105 163, 105 173, 101 186',w:1.5},
+  {d:'M199 155 C 195 167, 195 177, 199 190',w:1.5},
+  {d:'M118 92 C 116 100, 112 106, 108 112',w:1.3},
+  {d:'M184 94 C 186 102, 190 108, 194 114',w:1.3}
+ ],{outline:'#a98552',fill:'#f2e3c0',hair:'#e6d3a8',hairs:4,h0:3,h1:6,hw:.8,
+  galls:[[0,.22,1.1],[0,.5,1.25],[0,.8,.9],[1,.3,1.15],[1,.55,1],[1,.85,.8],[2,.32,1.15],[2,.58,1],[2,.86,.8],[3,.35,1],[3,.72,.85],[4,.35,1],[4,.72,.85],[5,.55,.7],[6,.55,.7],[7,.6,.7],[8,.6,.7]]});
+ [[38,168,18],[262,178,-22],[124,192,8],[60,92,-10]].forEach(([x,y,a])=>worm($('f1worms'),{cx:x,cy:y,len:22,ang:a,w:2.6,amp:2,waves:1.3,fill:'#f8ecd2',stroke:'#9c7a48',sw:.45}));
+ grassRow($('f1grass'),0,300,x=>72-2*Math.sin(Math.PI*x/80),3,8,['#5f9e45','#78b553','#4f8a3a'],[1.2,2.6]);
+ const pl=$('f1plant');
+ [[128,32,24,-150,'#a7c95b'],[172,20,22,-32,'#9dc85c'],[150,15,17,-92,'#b3d46a'],[150,44,25,-168,'#c9cb55'],[150,36,23,-14,'#bcd05a'],[150,57,28,166,'#dcc353'],[151,59,27,16,'#e1b64e']]
+  .forEach(([x,y,l,a,c])=>leaf(pl,x,y,l,a,c,.36,'rgba(90,70,20,.25)'));
+}
 
-<!-- flowers bottom -->
-<svg style="position:absolute;left:4mm;bottom:2mm;width:60mm" viewBox="0 0 120 80"><g>
- <path d="M30 80 L30 40 M70 80 L70 30 M100 80 L100 50" stroke="#4f9a45" stroke-width="3"/>
- <g fill="#f2c230"><circle cx="30" cy="35" r="10"/><circle cx="100" cy="45" r="8"/></g><circle cx="30" cy="35" r="4" fill="#d9822b"/>
- <g fill="#e2574c"><circle cx="70" cy="25" r="10"/></g><circle cx="70" cy="25" r="4" fill="#fbe3a0"/></g></svg>
-<svg style="position:absolute;right:4mm;bottom:2mm;width:60mm;transform:scaleX(-1)" viewBox="0 0 120 80"><g>
- <path d="M30 80 L30 40 M70 80 L70 30 M100 80 L100 50" stroke="#4f9a45" stroke-width="3"/>
- <g fill="#b07ad6"><circle cx="30" cy="35" r="10"/><circle cx="100" cy="45" r="8"/></g><circle cx="30" cy="35" r="4" fill="#fbe3a0"/>
- <g fill="#f2c230"><circle cx="70" cy="25" r="10"/></g><circle cx="70" cy="25" r="4" fill="#d9822b"/></g></svg>
+/* ---------- วงกล้องจุลทรรศน์ ---------- */
+{const S=$('scope');
+ for(let i=0;i<30;i++)el('circle',{cx:f(R(5,95)),cy:f(R(5,95)),r:f(R(.3,1.4)),fill:'#9cc98a',opacity:f(R(.15,.35))},S);
+ [[66,70,0],[73,66,30],[72,75,-20],[79,71,10],[65,78,40],[78,79,-30]].forEach(([x,y,a],i)=>{const e=el('g',{transform:`translate(${x} ${y}) rotate(${a})`},S);
+  el('ellipse',{rx:3.3,ry:2.1,fill:'#fbf3dc',stroke:'#c4a066','stroke-width':.45},e);
+  if(i===2)el('path',{d:'M-1.8 .3 c .6 -1.4 2.6 -1.4 2.8 0 c .2 1 -1.2 1.2 -1.6 .4',stroke:'#c9a56c','stroke-width':.45,fill:'none'},e);});
+ worm(S,{cx:45,cy:42,len:76,ang:-30,w:9,amp:7,waves:1.15,phase:.4,fill:'url(#wormG)',stroke:'#b28a52',sw:.55,detail:true});
+ el('path',{d:'M24 82 H42 M24 80.4 V83.6 M42 80.4 V83.6',stroke:'#2f5a33','stroke-width':.8,fill:'none'},S);
+ const t=el('text',{x:33,y:78.4,'text-anchor':'middle','font-family':'Kanit','font-size':4.6,fill:'#2f5a33'},S);t.textContent='0.1 มม.';
+}
 
-<div class="credit">นายณัฐธัญ ชีพนุรัตน์ เลขที่ 2 ม.5/7<br>อภิวิชญ์ อิทธิพัทธ์วรกุล เลขที่ 28 ม.5/7</div>
+/* ---------- กรอบภาพ 2: รากปกติ vs รากเป็นโรค ---------- */
+{const sk=[
+  {d:'M0 0 C -1 28, 3 56, -1 84 C -3 100, 1 112, 0 124',w:3.6},
+  {d:'M0 12 C -14 18, -26 22, -44 32',w:2.4},{d:'M0 14 C 15 20, 27 26, 43 34',w:2.4},
+  {d:'M0 40 C -13 48, -24 56, -34 70',w:2.2},{d:'M1 42 C 15 50, 25 60, 33 74',w:2.2},
+  {d:'M-1 70 C -10 78, -16 88, -20 102',w:1.9},{d:'M0 72 C 9 80, 14 90, 17 104',w:1.9},
+  {d:'M-26 22 C -30 30, -32 36, -38 46',w:1.3},{d:'M27 26 C 30 34, 31 40, 36 50',w:1.3},
+  {d:'M-24 56 C -20 64, -19 70, -22 80',w:1.2},{d:'M25 60 C 22 68, 22 74, 25 84',w:1.2}];
+ const top=(g,cols)=>{el('path',{d:'M0 2 C 0 -4, .5 -9, 0 -16',stroke:'#4e8a3a','stroke-width':3,fill:'none','stroke-linecap':'round'},g);
+  leaf(g,0,-9,13,-155,cols[0],.38,'rgba(0,0,0,.15)');leaf(g,0,-11,13,-25,cols[1],.38,'rgba(0,0,0,.15)');leaf(g,0,-15,9,-90,cols[2],.38,'rgba(0,0,0,.15)');
+  for(let i=0;i<7;i++)el('ellipse',{cx:f(R(-9,9)),cy:f(R(0,4)),rx:f(R(1,2.2)),ry:f(R(.7,1.4)),fill:'#8a6038',opacity:.8},g);};
+ drawRoots($('f2L'),sk,{outline:'#c8a872',fill:'#f6ecd3',hair:'#d8c397',hairs:14,h0:2,h1:4.5,hw:.55});
+ top($('f2L'),['#5fae4a','#6dba52','#82c65e']);
+ drawRoots($('f2R'),sk,{outline:'#b08a55',fill:'#ecd8ae',hair:'#d7c095',hairs:2,h0:1.5,h1:3,hw:.5,
+  galls:[[0,.18,.8],[0,.42,1],[0,.66,.85],[0,.88,.7],[1,.45,.85],[1,.8,.7],[2,.45,.85],[2,.8,.7],[3,.5,.8],[4,.5,.8],[5,.6,.7],[6,.6,.7],[7,.6,.55],[8,.6,.55],[9,.6,.5],[10,.6,.5]]});
+ top($('f2R'),['#d2c652','#e0b84e','#c9cb55']);
+}
+
+/* ---------- ใบไม้ประดับมุมกรอบ ---------- */
+document.querySelectorAll('.sprig').forEach(s=>{leaf(s,3,15,10,-80,'#3c8a43',.36);leaf(s,4,16,14,-40,'#4d9e4b',.36);leaf(s,6,17,12,-5,'#62b054',.36);leaf(s,10,17,9,20,'#78c060',.36)});
+})();
+</script>
 </body></html>
